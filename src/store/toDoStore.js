@@ -22,7 +22,8 @@ class TodoStore {
         this.inputData = payload.target.value;
     }
     removeTodoItem = (payload)=> {
-
+        this.toDoList.splice(payload.target.id, 1)
+        console.log(this.toDoList)
     }
 
     completeTodoItem = (payload)=> {

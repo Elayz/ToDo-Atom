@@ -5,16 +5,16 @@ import {observer} from "mobx-react-lite";
 
 let key = 0;
 const ResultBlock = observer(() => {
-    const {toDoList} = toDoStore;
+    const {toDoList, removeTodoItem} = toDoStore;
     const resultBlockItemsData = toDoList.map((el) => {
-        console.log(toDoList.indexOf(el))
         key++
+        console.log(toDoList.indexOf(el))
         return (
             <div key={key+0.2} className={classes.resultsBlockItemBlock}>
-                <div key={key} className={classes.resultsBlockItem}>
-                    {el}
-                </div>
-                <div id={toDoList.indexOf(el)} key={key+0.1} className={classes.close}></div>
+                {toDoList.indexOf(el) % 2 !== 0
+                    ? <div style={{backgroundColor: '#025544'}} key={key} className={classes.resultsBlockItem}>{el}</div>
+                    : <div key={key} className={classes.resultsBlockItem}>{el}</div>}
+                <div onClick={removeTodoItem} id={toDoList.indexOf(el)} key={key+0.1} className={classes.close}></div>
             </div>
         )
     })
