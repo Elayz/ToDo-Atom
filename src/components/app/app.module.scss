@@ -1,0 +1,68 @@
+html{
+  background-color: #003645;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inputZoneClass{
+  display: flex;
+  align-items: center;
+}
+h1 {
+  //font-family: 'Santa', serif;
+  font-size: 400%;
+  color: #00755c;
+  transition: 0.2s ease-out;
+  letter-spacing: 3px;
+  -webkit-text-stroke: 1px #e1c289;
+}
+h1:hover {
+  letter-spacing: 5px;
+  color: #719C73;
+}
+.inputClass {
+  background-color: #00755c;
+  border: 2px #e1c289 solid;
+  border-radius: 5px;
+  width: 250px;
+  padding: 5px;
+  height: 30px;
+  transition: 0.2s ease-out;
+  margin-right: 2px;
+  color: #e1c289;
+  font-size: 130%;
+  text-align: center;
+}
+.inputClass::placeholder{
+  color: #e1c289;
+  font-size: 110%;
+  text-align: center;
+}
+.inputClass:hover {
+  transform: scale(0.98);
+}
+.buttonClass {
+  background-color: #00755c;
+  border: 2px #e1c289 solid;
+  border-radius: 5px;
+  width: 60px;
+  height: 43px;
+  padding: 5px;
+  color: #e1c289;
+  transition: 0.2s ease-out;
+}
+.buttonClass:hover {
+  transform: scale(0.95);
+}
+.buttonClass:active {
+  transform: scale(0.9);
+}
+.resultsBlock {
+  margin: 30px;
+  transition: 0.2s ease-out;
+  overflow: visible;
+  height: 50vh;
+}

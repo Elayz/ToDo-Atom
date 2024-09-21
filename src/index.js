@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from "./components/app/app";
+import {createContext} from "react";
+import todoStore from "./store/toDoStore";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const GlobalStore = createContext(todoStore);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <GlobalStore.Provider value={GlobalStore}>
+        <App></App>
+    </GlobalStore.Provider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

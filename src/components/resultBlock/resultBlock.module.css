@@ -1,0 +1,32 @@
+.resultsBlockItem {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border: 3px #e1c289 solid;
+  border-radius: 10px;
+  background-color: #00755c;
+  width: 300px;
+  text-decoration: none;
+  color: #e1c289;
+  font-family: "Santa", serif;
+  letter-spacing: 3px;
+  font-size: 150%;
+  transition: 0.1s ease-out;
+  text-align: center;
+}
+
+.resultsBlockItem:hover {
+  transform: scale(1.1);
+}
+
+@keyframes resultsBlockAnimation {
+  0% {
+    transform: translate(-1000px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/*# sourceMappingURL=resultBlock.module.css.map */
