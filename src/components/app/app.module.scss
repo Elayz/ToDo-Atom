@@ -31,10 +31,10 @@ h1:hover {
   padding: 5px;
   height: 30px;
   transition: 0.2s ease-out;
-  margin-right: 2px;
   color: #e1c289;
   font-size: 130%;
   text-align: center;
+
 }
 .inputClass::placeholder{
   color: #e1c289;
@@ -53,6 +53,11 @@ h1:hover {
   padding: 5px;
   color: #e1c289;
   transition: 0.2s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  margin-left: 3px;
 }
 .buttonClass:hover {
   transform: scale(0.95);

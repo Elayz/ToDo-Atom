@@ -4,7 +4,7 @@ import {observer} from "mobx-react-lite";
 import ResultBlock from "../resultBlock/resultBlock";
 
 const App = observer(() => {
-    const {addTodoItem, inputData, action_inputData} = toDoStore;
+    const {action_removeTodoCompleteItem, action_clearAll, addTodoItem, inputData, action_inputData} = toDoStore;
     const tapFoo = () => {
         addTodoItem('f');
     }
@@ -17,6 +17,8 @@ const App = observer(() => {
                        onKeyDown={(event) => {addTodoItem(event.key, inputData)}}
                        onChange={action_inputData}/>
                 <button onClick={() => addTodoItem('Enter',inputData)} className={classes.buttonClass}>Add</button>
+                <button style={{fontSize: '10px'}} onClick={action_removeTodoCompleteItem} className={classes.buttonClass}>Clear Completed</button>
+                <button onClick={action_clearAll} className={classes.buttonClass}>Clear All</button>
             </div>
             <div className={classes.resultsBlock}>
                 <ResultBlock></ResultBlock>

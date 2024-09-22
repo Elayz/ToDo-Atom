@@ -13,7 +13,6 @@
   border-radius: 10px;
   background-color: #00755c;
   width: 300px;
-  text-decoration: none;
   color: #e1c289;
   font-family: "Santa", serif;
   letter-spacing: 3px;
@@ -28,10 +27,42 @@
   transform: scale(1.04);
 }
 
+.resultsBlockItem:active {
+  transform: scale(1.02);
+}
+
+.resultsBlockItemCompleted {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+  border: 3px silver solid;
+  border-radius: 10px;
+  background-color: #616161;
+  width: 300px;
+  color: silver;
+  font-family: "Santa", serif;
+  letter-spacing: 3px;
+  font-size: 150%;
+  transition: 0.1s ease-out;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  text-decoration: line-through;
+}
+
+.resultsBlockItemCompleted:hover {
+  transform: scale(1.04);
+}
+
+.resultsBlockItemCompleted:active {
+  transform: scale(1.02);
+}
+
 .close {
   width: 24px;
   height: 24px;
-  margin-left: auto;
+  margin-left: 10px;
   border-radius: 100px;
   transition: 0.2s ease-out;
   background: linear-gradient(45deg, transparent calc(50% - 3px), #e1c289 calc(50% - 3px), #e1c289 calc(50% + 3px), transparent calc(50% + 3px)), linear-gradient(-45deg, transparent calc(50% - 3px), #e1c289 calc(50% - 3px), #e1c289 calc(50% + 3px), transparent calc(50% + 3px));
@@ -42,6 +73,53 @@
 }
 
 .close:active {
+  transform: scale(0.8);
+}
+
+.closeComplete {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  border-radius: 100px;
+  transition: 0.2s ease-out;
+  background: linear-gradient(45deg, transparent calc(50% - 3px), silver calc(50% - 3px), silver calc(50% + 3px), transparent calc(50% + 3px)), linear-gradient(-45deg, transparent calc(50% - 3px), silver calc(50% - 3px), silver calc(50% + 3px), transparent calc(50% + 3px));
+}
+
+.closeComplete:hover {
+  transform: scale(0.95);
+}
+
+.closeComplete:active {
+  transform: scale(0.8);
+}
+
+.pencil {
+  width: 50px;
+  height: 50px;
+  background: url("../assets/pencil.svg") no-repeat center;
+  background-size: 25px;
+}
+
+.pencil:hover {
+  transform: scale(0.95);
+}
+
+.pencil:active {
+  transform: scale(0.8);
+}
+
+.checkMark {
+  width: 50px;
+  height: 50px;
+  background: url("../assets/checkMark.svg") no-repeat center;
+  background-size: 30px;
+}
+
+.checkMark:hover {
+  transform: scale(0.95);
+}
+
+.checkMark:active {
   transform: scale(0.8);
 }
 
