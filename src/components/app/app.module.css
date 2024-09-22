@@ -20,6 +20,7 @@ h1 {
   transition: 0.2s ease-out;
   letter-spacing: 3px;
   -webkit-text-stroke: 1px #e1c289;
+  z-index: 5;
 }
 
 h1:hover {
