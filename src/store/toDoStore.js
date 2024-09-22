@@ -6,6 +6,7 @@ class TodoStore {
     toDoListCompleted = [];
     inputData = '';
     updatedItem = -1;
+    modifyElementId = -1;
 
     constructor() {
         makeAutoObservable(this);
@@ -46,10 +47,20 @@ class TodoStore {
         this.toDoListCompleted.splice(payload.target.id, 1);
     }
     updateTodoItem = (payload)=> {
+        console.log(payload.target.id, this.toDoList[payload.target.id]);
+        setTimeout(() => {
+            const modifyInput = document.getElementById('modify');
+            modifyInput.value = this.toDoList[payload.target.id];
+            this.modifyElementId = payload.target.id;
+        }, 0)
         this.updatedItem = payload.target.id;
     }
-    action_todoItemUpdated = () => {
-        this.updatedItem = -1;
+    action_todoItemUpdated = (event) => {
+        const modifyInput = document.getElementById('modify');
+        if (event === 'Enter' && modifyInput.value !== '') {
+            this.toDoList[this.modifyElementId] = modifyInput.value;
+            this.updatedItem = -1;
+        }
     }
 }
 

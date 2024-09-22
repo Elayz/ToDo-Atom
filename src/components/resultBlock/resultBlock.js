@@ -20,12 +20,7 @@ const ResultBlock = observer(() => {
         key++
         return (
             <div key={key + 0.2} className={classes.resultsBlockItemBlock}>
-                {toDoList.indexOf(el) !== Number(updatedItem)
-                    ?
-                    (<div id={toDoList.indexOf(el)} onClick={updateTodoItem} className={classes.pencil}></div>)
-                    :
-                    (<div onClick={action_todoItemUpdated} className={classes.checkMark}></div>)
-                }
+                    <div id={toDoList.indexOf(el)} onClick={updateTodoItem} className={classes.pencil}></div>
             {toDoList.indexOf(el) % 2 !== 0
                 ? <div
                     onClick={(itemInfo) => completeTodoItem(itemInfo)}
@@ -55,7 +50,19 @@ const ResultBlock = observer(() => {
         </div>)
     })
 
-    return (<div>
+    return (
+        <div>
+            {updatedItem !==-1
+                ?
+                <div className={classes.changeResultBlockValueBackground}>
+                    <div className={classes.changeResultBlockValueBlock}>
+                        <div
+                            onClick={(event) => {action_todoItemUpdated('Enter')}} className={classes.checkMark}></div>
+                        <input onKeyDown={(event) => {action_todoItemUpdated(event.key)}} id={'modify'} placeholder={'Modify ToDo'} className={classes.changeResultBlockValue}></input>
+                    </div>
+                </div>
+                :<div></div>
+            }
         {resultBlockItemsData}
         {resultBlockItemsDataCompleted}
     </div>);

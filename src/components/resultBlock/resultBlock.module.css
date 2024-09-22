@@ -114,6 +114,48 @@
   transform: scale(0.8);
 }
 
+.changeResultBlockValueBackground {
+  z-index: 2;
+  opacity: 0.97;
+  background-color: #012D21;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.changeResultBlockValueBlock {
+  z-index: 3;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+}
+
+.changeResultBlockValue {
+  background-color: #00755c;
+  border: 2px #e1c289 solid;
+  border-radius: 5px;
+  width: 350px;
+  padding: 5px;
+  height: 30px;
+  transition: 0.2s ease-out;
+  color: #e1c289;
+  font-size: 130%;
+  text-align: center;
+}
+
+.changeResultBlockValue::placeholder {
+  color: #e1c289;
+  font-size: 110%;
+  text-align: center;
+}
+
 .checkMark {
   width: 50px;
   height: 50px;
@@ -127,19 +169,6 @@
 
 .checkMark:active {
   transform: scale(0.8);
-}
-
-.inputClass {
-  background-color: #00755c;
-  border: 2px #e1c289 solid;
-  border-radius: 5px;
-  width: 250px;
-  padding: 5px;
-  height: 30px;
-  transition: 0.2s ease-out;
-  color: #e1c289;
-  font-size: 130%;
-  text-align: center;
 }
 
 @keyframes resultsBlockAnimation {
