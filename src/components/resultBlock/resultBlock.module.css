@@ -100,6 +100,12 @@
   background-size: 25px;
 }
 
+.pencilCompleted {
+  width: 50px;
+  height: 50px;
+  background-size: 25px;
+}
+
 .pencil:hover {
   transform: scale(0.95);
 }
@@ -121,6 +127,19 @@
 
 .checkMark:active {
   transform: scale(0.8);
+}
+
+.inputClass {
+  background-color: #00755c;
+  border: 2px #e1c289 solid;
+  border-radius: 5px;
+  width: 250px;
+  padding: 5px;
+  height: 30px;
+  transition: 0.2s ease-out;
+  color: #e1c289;
+  font-size: 130%;
+  text-align: center;
 }
 
 @keyframes resultsBlockAnimation {

@@ -5,13 +5,27 @@ import {observer} from "mobx-react-lite";
 
 let key = 0;
 const ResultBlock = observer(() => {
-    const {action_unCompleteTodoItem, completeTodoItem, toDoList, removeTodoItem, toDoListCompleted, removeTodoCompleteItem} = toDoStore;
+    const {
+        action_todoItemUpdated,
+        updateTodoItem,
+        updatedItem,
+        action_unCompleteTodoItem,
+        completeTodoItem,
+        toDoList,
+        removeTodoItem,
+        toDoListCompleted,
+        removeTodoCompleteItem
+    } = toDoStore;
     const resultBlockItemsData = toDoList.map((el) => {
         key++
         return (
             <div key={key + 0.2} className={classes.resultsBlockItemBlock}>
-                <div className={classes.pencil}></div>
-                <div className={classes.checkMark}></div>
+                {toDoList.indexOf(el) !== Number(updatedItem)
+                    ?
+                    (<div id={toDoList.indexOf(el)} onClick={updateTodoItem} className={classes.pencil}></div>)
+                    :
+                    (<div onClick={action_todoItemUpdated} className={classes.checkMark}></div>)
+                }
             {toDoList.indexOf(el) % 2 !== 0
                 ? <div
                     onClick={(itemInfo) => completeTodoItem(itemInfo)}
@@ -31,8 +45,7 @@ const ResultBlock = observer(() => {
     const resultBlockItemsDataCompleted = toDoListCompleted.map((el) => {
         key++
         return (<div key={key + 0.2} className={classes.resultsBlockItemBlock}>
-            <div className={classes.pencil}></div>
-            <div className={classes.checkMark}></div>
+            <div id={toDoList.indexOf(el)} onClick={updateTodoItem} className={classes.pencilCompleted}></div>
                 <div
                     onClick={(itemInfo) => action_unCompleteTodoItem(itemInfo)}
                     id={toDoListCompleted.indexOf(el)}

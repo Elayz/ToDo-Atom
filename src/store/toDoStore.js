@@ -5,7 +5,7 @@ class TodoStore {
     toDoList = ['1','2','3','4','5','6'];
     toDoListCompleted = [];
     inputData = '';
-    updatedItem = null;
+    updatedItem = -1;
 
     constructor() {
         makeAutoObservable(this);
@@ -23,6 +23,7 @@ class TodoStore {
         this.inputData = payload.target.value;
     }
     removeTodoItem = (payload)=> {
+        this.updatedItem = -1;
         this.toDoList.splice(payload.target.id, 1)
     }
     removeTodoCompleteItem = (payload)=> {
@@ -38,6 +39,7 @@ class TodoStore {
     completeTodoItem = (payload)=> {
         this.toDoListCompleted.push(this.toDoList[payload.target.id]);
         this.toDoList.splice(payload.target.id, 1);
+        this.updatedItem = -1;
     }
     action_unCompleteTodoItem = (payload)=> {
         this.toDoList.push(this.toDoListCompleted[payload.target.id]);
@@ -45,6 +47,9 @@ class TodoStore {
     }
     updateTodoItem = (payload)=> {
         this.updatedItem = payload.target.id;
+    }
+    action_todoItemUpdated = () => {
+        this.updatedItem = -1;
     }
 }
 
