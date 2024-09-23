@@ -34,7 +34,11 @@ const ResultBlock = observer(() => {
                      key={key}
                      className={classes.resultsBlockItem}>{el}
                 </div>}
-                <div onClick={removeTodoItem} id={toDoList.indexOf(el)} key={key + 0.1} className={classes.close}></div>
+                <div
+                    onClick={removeTodoItem}
+                    id={toDoList.indexOf(el)}
+                    key={key + 0.1}
+                    className={classes.close}></div>
         </div>)
     })
     const resultBlockItemsDataCompleted = toDoListCompleted.map((el) => {
@@ -46,7 +50,13 @@ const ResultBlock = observer(() => {
                     id={toDoListCompleted.indexOf(el)}
                     key={key} className={classes.resultsBlockItemCompleted}>{el}
                 </div>
-            <div onClick={removeTodoCompleteItem} id={toDoListCompleted.indexOf(el)} key={key + 0.1} className={classes.closeComplete}></div>
+            <div
+                onClick={removeTodoCompleteItem}
+                id={toDoListCompleted.indexOf(el)}
+                key={key + 0.1}
+                className={classes.closeComplete}>
+
+            </div>
         </div>)
     })
 
@@ -57,8 +67,13 @@ const ResultBlock = observer(() => {
                 <div className={classes.changeResultBlockValueBackground}>
                     <div className={classes.changeResultBlockValueBlock}>
                         <div
-                            onClick={(event) => {action_todoItemUpdated('Enter')}} className={classes.checkMark}></div>
-                        <input onKeyDown={(event) => {action_todoItemUpdated(event.key)}} id={'modify'} placeholder={'Modify ToDo'} className={classes.changeResultBlockValue}></input>
+                            onClick={(event) => {action_todoItemUpdated('Enter')}}
+                            className={classes.checkMark}></div>
+                        <input
+                            onKeyDown={(event) => {action_todoItemUpdated(event.key)}}
+                            id={'modify'}
+                            placeholder={'Modify ToDo'}
+                            className={classes.changeResultBlockValue}></input>
                     </div>
                 </div>
                 :<div></div>

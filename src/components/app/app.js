@@ -17,7 +17,10 @@ const App = observer(() => {
                        onKeyDown={(event) => {addTodoItem(event.key, inputData)}}
                        onChange={action_inputData}/>
                 <button onClick={() => addTodoItem('Enter',inputData)} className={classes.buttonClass}>Add</button>
-                <button style={{fontSize: '10px'}} onClick={action_removeTodoCompleteItem} className={classes.buttonClass}>Clear Completed</button>
+                <button
+                    style={{fontSize: '10px'}}
+                    onClick={action_removeTodoCompleteItem}
+                    className={classes.buttonClass}>Clear Completed</button>
                 <button onClick={action_clearAll} className={classes.buttonClass}>Clear All</button>
             </div>
             <div className={classes.resultsBlock}>
