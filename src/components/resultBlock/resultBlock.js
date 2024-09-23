@@ -44,7 +44,7 @@ const ResultBlock = observer(() => {
     const resultBlockItemsDataCompleted = toDoListCompleted.map((el) => {
         key++
         return (<div key={key + 0.2} className={classes.resultsBlockItemBlock}>
-            <div id={toDoList.indexOf(el)} onClick={updateTodoItem} className={classes.pencilCompleted}></div>
+            <div id={toDoList.indexOf(el)} className={classes.pencilCompleted}></div>
                 <div
                     onClick={(itemInfo) => action_unCompleteTodoItem(itemInfo)}
                     id={toDoListCompleted.indexOf(el)}
