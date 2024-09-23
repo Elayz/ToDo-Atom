@@ -21,6 +21,7 @@ h1 {
   letter-spacing: 3px;
   -webkit-text-stroke: 1px #e1c289;
   z-index: 5;
+  user-select: none;
 }
 
 h1:hover {
@@ -45,6 +46,7 @@ h1:hover {
   color: #e1c289;
   font-size: 110%;
   text-align: center;
+  user-select: none;
 }
 
 .inputClass:hover {
