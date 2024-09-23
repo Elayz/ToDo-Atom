@@ -2,7 +2,7 @@ import {makeAutoObservable} from "mobx";
 
 
 class TodoStore {
-    toDoList = ['1','2','3','4','5','6'];
+    toDoList = ['Do what you love','Be brave','Be kind', 'Dont forget to show love to your loved ones','Help those in need','Your life in your hands hero'];
     toDoListCompleted = [];
     inputData = '';
     updatedItem = -1;
